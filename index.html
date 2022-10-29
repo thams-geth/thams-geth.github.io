@@ -15,7 +15,7 @@
       the `--base-href` argument provided to `flutter build`.
     -->
     <!--  <base href="https://thams-geth.github.io/">-->
-    <base href="/">
+    <!--    <base href="/#/splash">-->
 
     <link rel="manifest" href=”manifest.json” crossorigin="use-credentials"/>
 
@@ -29,7 +29,6 @@
     <meta name="apple-mobile-web-app-title" content="Farmcart">
     <link rel="apple-touch-icon" href="icons/farmer_cow_circle.png">
 
-    Favicon
     <!--    <link rel="icon" type="image/png" href="favicon.png"/>-->
 
     <link rel="icon" type="image/png" href="icons/farmer_cow_circle.png"/>
@@ -39,14 +38,64 @@
 
     <script>
     // The value below is injected by flutter build, do not touch.
-    var serviceWorkerVersion = '3911034469';
+    var serviceWorkerVersion = '2603852035';
 
 
     </script>
     <!-- This script adds the flutter initialization JS code -->
     <script src="flutter.js" defer></script>
+    <style type="text/css">
+
+    .loading {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+
+    .loader {
+        border: 6px solid #000000;
+        border-radius: 50%;
+        border-left: 6px solid white;
+        width: 40px;
+        height: 40px;
+        -webkit-animation: spin 1s linear infinite;
+        animation: spin 1s linear infinite;
+    }
+
+    @-webkit-keyframes spin {
+        0% {
+            -webkit-transform: rotate(0deg);
+        }
+
+        100% {
+            -webkit-transform: rotate(360deg);
+        }
+    }
+
+    @keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+
+    </style>
 </head>
 <body>
+
+<div class="loading">
+    <div class="loader"></div>
+</div>
 <script>
     window.addEventListener('load', function(ev) {
       // Download main.dart.js
@@ -60,6 +109,9 @@
         return appRunner.runApp();
       });
     });
+
+
+
 
 </script>
 </body>
